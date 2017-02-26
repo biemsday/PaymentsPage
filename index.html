@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PaymentsPage</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+	<!-- Левое меню -->
+	<div id="menu">
+		
+		<div id="logo">
+			<a href="#"><img src="img/logo.png"></a>
+		</div>
+
+		<div id="navigation">
+			<li><a href="#">Первая ссылка</a></li>
+			<li><a href="#" class="active">Вторая ссылка</a></li>
+			<li><a href="#">Третья ссылка</a></li>
+			<li id="other"><a href="#">Личный кабинет</a></li>
+			<li id="other"><a href="#">Выход</a></li>
+		</div>
+	</div>
+
+	<!-- Основное поле -->
+	<div id="main">
+
+		<!-- Заголовок -->	
+		<div id="title">		
+			<h1>Заголовок страницы</h1>
+			<p>В отличие от пылевого и ионного хвостов, направление поступает </br>в лимногляциальный часовой угол</p>
+		</div>
+
+		<!-- Основной фрейм -->
+		<div id="page">	
+			<p class="title">Информация об оплате:</p>
+			<p>Номер счета:<span>87123658716587</span></p>
+			<p>Сумма платежа:<span>100 руб.</span></p>
+			<h1>Данные банковской карты</h1>
+
+			<!-- Форма оплаты -->
+			<form>
+
+				<!-- Лицевая сторона карты -->
+				<div id="front_card">
+
+					<p>Номер карты</p>
+
+					<!-- Номер карты -->
+					<input id="field1" type="text" maxlength="4" placeholder="0000"></input>
+					<input id="field2" type="text" maxlength="4" placeholder="0000"></input>
+					<input id="field3" type="text" maxlength="4" placeholder="0000"></input>
+					<input id="field4" type="text" maxlength="4" placeholder="0000"></input>
+
+					<p>Срок действия</p>
+
+					<!-- Выбор месяца -->
+					<div id="month">
+						<div class="select">
+							<select>
+								<option value="1">01</option>
+								<option value="2">02</option>
+								<option value="3">03</option>
+								<option value="4">04</option>
+								<option value="5">05</option>
+								<option value="6">06</option>
+								<option value="7">07</option>
+								<option value="8">08</option>
+								<option value="9">09</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+							</select>
+						</div>
+					</div>
+
+					<!-- Выбор года -->
+					<div id="year">
+						<div class="select">
+							<select>
+								<option value="2017">2017</option>
+								<option value="2018">2018</option>
+								<option value="2019">2019</option>
+								<option value="2020">2020</option>
+								<option value="2021">2021</option>
+								<option value="2022">2022</option>
+								<option value="2023">2023</option>
+								<option value="2024">2024</option>
+								<option value="2025">2025</option>
+								<option value="2026">2026</option>
+								<option value="2027">2027</option>
+							</select>
+						</div>
+					</div>
+
+					<!-- Держатель карты -->
+					<div id="user">
+						<input id="holder" type="text" placeholder="Держатель карты"></input>
+					</div>
+
+				</div>
+
+				<!-- Поле CVV кода -->
+				<div id="back_card">
+					<hr>
+					<p>Код CVV2 / CVC2</p>
+					<div class="faq" data-title="3 цифры c обратной стороны карты">
+						<img src="img/faq.png">
+					</div>
+					<input id="cvv" type="text" maxlength="3" placeholder="000">
+				</div>
+				
+				<!-- Кнопка подтверждения -->
+				<input id="submit" type="submit" value="Оплатить">
+
+			</form>
+		</div>
+	</div>
+
+	<div id="footer">
+		
+		<p>		
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. 
+		</p>
+
+		<p>
+			Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+	</div>
+
+<!-- Анимация навигационного меню -->
+<script type="text/javascript">
+	$("#navigation li a").click(function(e) {
+	e.preventDefault();
+	$("#navigation li a").removeClass('active');
+	$(this).addClass('active');
+	})
+</script>
+
+<!-- Заполнение полей номера карты -->
+<script type="text/javascript">
+	$('#field1, #field2, #field3, #field4, #cvv').bind("change keyup input click",function(){
+	if(this.value.match(/[^0-9]/g)){
+		this.value=this.value.replace(/[^0-9]/g,'');
+	}
+});
+</script>
+
+<!-- Заполнение поля держателя карты -->
+<script type="text/javascript">
+$('#holder').bind("change keyup input click",function(){
+	if(this.value.match(/[а-яА-Я0-9@\.]/g)){
+		this.value=this.value.replace(/[а-яА-Я0-9@\.]/g,'');
+	}
+});
+</script>
+
+</body>
+</html>
+
+		
+		
+		
+		
+		

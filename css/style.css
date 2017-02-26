@@ -1,0 +1,325 @@
+/*Подключаем шрифты*/
+@font-face{
+	font-family: OpenSans;
+	scr: url(../fonts/OpenSans-Bold.ttf);
+}
+p, h1, h2, h3, a{
+	margin: 0;
+	font-family: OpenSans, 'OpenSans-Bold', sans-serif;
+	font-weight: 400px;
+}
+
+
+/*Структурируем страницу*/
+html {
+	margin: 0;
+	background-color: ;
+	max-width: 100%;
+	position: relative;
+}
+
+/*Структурируем основной модуль*/
+body {
+	margin: 5% 15% 5% 15%;
+	max-width: 960px;
+	height: 100%;
+	background-color: #101114;
+}
+
+/*Левое навигационное меню*/
+#menu{
+	position: absolute;
+	display: inline-block;
+	float: left;
+}
+
+/*Логотип*/
+#logo{
+	max-width: 175px;
+	max-height: 36px;
+	padding: 65px 105px 65px 30px;
+	background-color: #1f2229;
+}
+
+/*Навигационные ссылки*/
+#navigation{
+	max-width: 310px;
+	background-color: #1f2229;
+	list-style: none;
+	text-shadow: 0px 1px 0px black;
+	font-weight: bold;
+}
+
+/*Оформление ссылок*/
+#navigation a{
+	color: #fff;
+	text-decoration: none;
+	border-top: 1px solid #242730;
+	padding: 30px 0px 30px 30px;
+	display: block;
+	background-color: #1f2229;
+}
+
+/*Альтернативные ссылки*/
+#other a{
+	background-color: #191c24;
+}
+
+/*Сылки при наведении*/
+#navigation li a:hover{
+	background-color: #2a2d37;
+}
+
+/*Ссылки при нажатии*/
+#navigation li a.active{
+	background-color: #2a2d37;
+}
+
+/*Заголовок основной страницы*/
+#main{
+	position: relative;
+	left: 310px;
+	max-width: 650px;
+	margin-left: 1px;
+}
+
+/*Оформляем текст заголовка*/
+#title{
+	background-color: #00aeef;
+	margin: 0;
+	padding: 0;
+	max-width: 650px;
+	min-height: 166px;
+	color: #193945;
+}
+
+#title h1 {
+	font-size: 32px;
+	padding: 50px 0px 0px 30px;
+}
+
+/*Оформляем текст*/
+#title p{
+	font-size: 16px;
+	padding: 10px 0px 10px 30px;
+}
+
+
+/*Основная страница*/
+#page {
+	margin: 0;
+	padding: 50px 0px 0px 30px;
+	max-width: 650px;
+	min-height: 570px;
+	background-color: white;
+	font-size: 16px;
+}
+
+#page p.title{
+	padding-bottom: 25px;
+	color: #8494ab;
+}
+
+#page p{
+	padding-bottom: 15px;
+	color: #8494ab;
+}
+
+#page span{
+	position: absolute;
+	left: 250px;
+	color: #000;
+}
+
+#page h1{
+	padding: 30px 0px 30px 0px;
+	font-size: 22px;
+}
+
+
+/*Оформление карты оплаты*/
+#front_card{
+	z-index: 2;
+	position: relative;
+	padding-left: 15px;
+	width: 350px;
+	height: 230px;
+	background-color: #f7f8f8;
+	border: 1px solid;
+	border-color: #e4e9ee;
+	border-radius: 10px;
+}
+
+#front_card input{
+	text-align: center;
+	margin-right: 5px;
+	font-size: 16px;
+	border: 1px solid #e4e9ee;
+	width: 60px;
+	height: 30px;
+}
+
+#front_card p{
+	padding-top: 15px;
+	font-size: 16px;
+}
+
+/*Селектор месяца*/
+#month{
+	display: block;
+	float: left;
+}
+
+#month select{
+	width: 60px;
+	height: 35px;
+	padding-left: 12px;
+	border:	1px solid #e4e9ee;
+	-webkit-appearance: none; 
+	-moz-appearance: none;
+	appearance: none;
+	background-color: transparent;
+}
+
+#month div.select{
+	float: left;
+	width: 50px;
+	height: 35px;
+	background-image: url(../img/arrow.png);
+	background-repeat: no-repeat;
+	background-position: center right;
+}
+
+/*Селектор года*/
+#year{
+	display: block;
+	float: left;
+	margin-left: 25px;
+}
+
+#year select{
+	width: 75px;
+	height: 35px;
+	padding-left: 12px;
+	border:	1px solid #e4e9ee;
+	-webkit-appearance: none; 
+	-moz-appearance: none;
+	appearance: none;
+	background-color: transparent;
+}
+
+#year div.select{
+	float: left;
+	width: 65px;
+	height: 35px;
+	background-image: url(../img/arrow.png);
+	background-repeat: no-repeat;
+	background-position: center right;
+}
+
+#user input{
+	text-align: left;
+	display: block;
+	position: relative;
+	width: 320px;
+	height: 35px;
+	padding-left: 10px;
+	margin-top: 50px;
+	font-size: 16px;
+	border: 1px solid #e4e9ee;
+}
+
+/*Задняя часть карты*/
+#back_card{
+	z-index: 1;
+	position: relative;
+	margin: -210px 0px 0px 175px;
+	padding-left: 15px;
+	width: 350px;
+	height: 230px;
+	background-color: #f7f8f8;
+	border: 1px solid;
+	border-color: #e4e9ee;
+	border-radius: 10px;
+}
+
+#back_card hr{
+	display: block;
+	position: relative;
+	top: 10px;
+	border: none;
+	background-color: #e4e9ee;
+	height: 40px;
+}
+
+#back_card p{
+	font-size: 16px;
+	padding-left: 190px;
+	padding-top: 20px;
+}
+
+#back_card input{
+	display: block;
+	position: relative;
+	top: -45px;
+	left: 190px;
+	padding-left: 10px;
+	width: 125px;
+	height: 35px;
+	font-size: 16px;
+	border: 1px solid #e4e9ee;
+	z-index: 1;
+}
+
+#back_card div.faq{
+	display: block;
+	position: relative;
+	top: -5px;
+	left: 290px;
+	z-index: 2;
+}
+
+#back_card div.faq:hover::after{
+	content: attr(data-title);
+	display: block;
+	position: absolute;
+	z-index: 3;
+	font-size: 12px;
+	font-family: OpenSans, 'OpenSans-Bold', sans-serif;
+	width: 135px;
+	top: 40px;
+	left: -100px;
+	color: #8494ab;
+}
+
+/*Кнопка подтверждения*/
+#submit{
+	display: block;
+	position: relative;
+	margin-top: 35px;
+	padding: 10px 50px 10px 50px;
+	border: none;
+	border-radius: 2px;
+	color: #fff;
+	font-size: 14px;
+	background: linear-gradient(to bottom, rgba(162,197,0,1) 21%,rgba(135,183,0,1) 83%)
+}
+
+/*Подвальная часть*/
+#footer{
+	display: block;
+	position: relative;
+	padding: 15px 0px 50px 0px;
+	left: 310px;
+	margin-left: 1px;
+	max-width: 650px;
+	background-color: #373c43; 
+}
+
+#footer p{
+	text-align: justify;
+	padding: 10px 25px 0px 25px;
+	color: #7f8591;
+	font-size: 12px;
+}
+
